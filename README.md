@@ -1,8 +1,9 @@
 # 🌐 News Aggregator
 **News Aggregator** is a powerful web application built using the MERN stack that fetches real-time news from multiple trusted sources. The website allows users to browse, filter, and categorize news based on preferences. It features a responsive design, user-friendly interface, and API-based data retrieval for seamless news consumption.
 
-![Screenshot 2024-12-11 102232](https://github.com/user-attachments/assets/19493004-1da0-4aea-848c-8dedd67afbad)
+![Screenshot 2025-01-25 135609](https://github.com/user-attachments/assets/a4e911fc-1774-40aa-9d81-99ba59328a32)
 
+![Screenshot 2025-01-25 135544](https://github.com/user-attachments/assets/bda2e51d-1194-486d-bc5f-d57d2b6afbd4)
 
 ### Features
 - **📡 Real-Time News Fetching** – Aggregates and updates news from various reliable sources.
@@ -12,10 +13,10 @@
 - **📤 Share News** – Easily share articles on social media.
 - **🔒 User Authentication** – Secure login and user preferences.
 
-![Screenshot 2024-12-11 102253](https://github.com/user-attachments/assets/57c4add8-023b-4b45-9871-9c59b413d0a9)
-
+![Screenshot 2025-01-25 135507](https://github.com/user-attachments/assets/e443dbd8-9e99-466b-801b-fe47abdd205f)
 
 ### Technologies Used
+
 - **Frontend:**
   - React.js
   - HTML
@@ -27,8 +28,8 @@
 - **Database:**
   - MongoDB
  
- ![Screenshot 2024-12-11 102314](https://github.com/user-attachments/assets/25e527c1-4af3-46c9-8317-ec575dabfd8d)
 
+![Screenshot 2025-01-25 135657](https://github.com/user-attachments/assets/5e27f59f-7fdf-4c37-806e-05c1316940e1)
 
 ### Installation
 
@@ -63,7 +64,6 @@ To get a local copy up and running follow these simple steps:
    ```bash
    npm start
 
-![Screenshot 2024-12-11 102327](https://github.com/user-attachments/assets/96589e0e-ca33-4d43-bfec-6bc260bfe46c)
 
   
 ### 🎯 Usage
