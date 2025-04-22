@@ -1,36 +1,10 @@
 import React, { useEffect, useState } from 'react';
-// import Navbar from './Navbar';
 import axios from "axios";
 import { Link } from 'react-router-dom';
-import "./FetchData.css"; 
-
+import "./FetchData.css";
 
 const FetchData = ({ cat }) => {
     const [data, setData] = useState([]);
-
-    const fetchData = async () => {
-        // const apiUrl = cat
-        //     ? `https://newsapi.org/v2/top-headlines?country=in&category=${cat}$sources=bbc-news&apiKey=8de05d19be3c4597bebdb372e14fed78`
-        //     : `https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=8de05d19be3c4597bebdb372e14fed78`;
-
-            const apiUrl = cat
-            
-            ? `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=8de05d19be3c4597bebdb372e14fed78`
-            : `https://newsapi.org/v2/top-headlines?country=us&apiKey=8de05d19be3c4597bebdb372e14fed78`;
-
-        const response = await axios.get(apiUrl);
-
-        const formattedData = response.data.articles.map(article => ({
-            ...article,
-            formattedDate: formatDate(article.publishedAt)
-        }));
-        setData(formattedData);
-    };
-    
-
-    useEffect(() => {
-        fetchData();
-    }, [cat]);
 
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -43,6 +17,27 @@ const FetchData = ({ cat }) => {
         };
         return date.toLocaleDateString('en-IN', options);
     };
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const apiUrl = cat
+                ? `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=8de05d19be3c4597bebdb372e14fed78`
+                : `https://newsapi.org/v2/top-headlines?country=us&apiKey=8de05d19be3c4597bebdb372e14fed78`;
+
+            try {
+                const response = await axios.get(apiUrl);
+                const formattedData = response.data.articles.map(article => ({
+                    ...article,
+                    formattedDate: formatDate(article.publishedAt)
+                }));
+                setData(formattedData);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, [cat]);
 
     const renderCards = () => {
         return data.map((item, index) => (
@@ -66,10 +61,10 @@ const FetchData = ({ cat }) => {
             </div>
         ));
     };
-    
+
     return (
         <div className="container my-5">
-            <h3 style={{fontSize:"50px"}} >Top Headlines</h3>
+            <h3 style={{fontSize:"50px"}}>Top Headlines</h3>
             <div className="row">
                 {data.length > 0 ? renderCards() : "Loading..."}
             </div>
@@ -78,4 +73,3 @@ const FetchData = ({ cat }) => {
 };
 
 export default FetchData;
-
