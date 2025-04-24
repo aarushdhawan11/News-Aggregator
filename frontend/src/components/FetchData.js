@@ -21,8 +21,9 @@ const FetchData = ({ cat }) => {
     useEffect(() => {
         const fetchData = async () => {
             const apiUrl = cat
-                ? `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=8de05d19be3c4597bebdb372e14fed78`
-                : `https://newsapi.org/v2/top-headlines?country=us&apiKey=8de05d19be3c4597bebdb372e14fed78`;
+    ? `http://localhost:4003/news?category=${cat}`
+    : `http://localhost:4003/news`;
+
 
             try {
                 const response = await axios.get(apiUrl);
