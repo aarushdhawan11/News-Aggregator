@@ -22,8 +22,8 @@ const FetchData = ({ cat }) => {
         const fetchData = async () => {
             setLoading(true);
             const apiUrl = cat
-                ? `http://localhost:4003/news?category=${cat}`
-                : `http://localhost:4003/news`;
+            ? `${process.env.REACT_APP_API_URL}/news?category=${cat}`
+            : `${process.env.REACT_APP_API_URL}/news`;
 
             try {
                 const response = await axios.get(apiUrl);
