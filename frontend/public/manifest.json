@@ -2,9 +2,8 @@
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [
-    
     {
-      "src": "/path/to/another-icon.png",
+      "src": "/logo192.png",
       "sizes": "192x192",
       "type": "image/png"
     }
